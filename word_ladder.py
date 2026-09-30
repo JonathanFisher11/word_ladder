@@ -32,6 +32,9 @@ def word_ladder(start_word, end_word, dictionary_file='words5.dict'):
     HINT:
     See <https://github.com/mikeizbicki/cmc-csci046/issues/472> for a discussion about a common memory management bug that causes the generated word ladders to be too long in some cases.
     '''
+    if start_word == end_word:
+        return [start_word]
+
     with open(dictionary_file) as j:
         dictionary = [line.strip() for line in j]
 
@@ -64,6 +67,9 @@ def verify_word_ladder(ladder):
     >>> verify_word_ladder(['stone', 'shone', 'phony'])
     False
     '''
+    if not ladder:
+        return False
+
     for i in range(len(ladder) - 1):
         if not _adjacent(ladder[i], ladder[i + 1]):
             return False
