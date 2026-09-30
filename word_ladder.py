@@ -3,7 +3,7 @@ from collections import deque
 
 def word_ladder(start_word, end_word, dictionary_file='words5.dict'):
     '''
-    Returns a list satisfying the following properties:
+    Returns a list satisfying following properties:
 
     1. the first element is `start_word`
     2. the last element is `end_word`
